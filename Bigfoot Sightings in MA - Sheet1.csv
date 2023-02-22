@@ -1,0 +1,30 @@
+Index,Year,Season,County,State,Class,Witnesses,Environment,Season2
+1,1977,Winter,Barnstable,MA,B,1,Woods,1
+2,1980,Fall,Barnstable,MA,C,2,Woods,4
+1,1989,Summer,Berkshire,MA,A,1,Woods,3
+2,2012,Winter,Berkshire,MA,B,2,Woods,1
+3,2014,Fall,Berkshire,MA,B,2,"Woods, Lake",4
+4,2015,Summer,Berkshire,MA,A,1,Field,3
+5,2015,Fall,Berkshire,MA,B,3,Lake,4
+6,2015,Fall,Berkshire,MA,B,1,"Woods, Rocks",4
+7,2016,Winter,Berkshire,MA,B,1,Snow,1
+8,2016,Spring,Berkshire,MA,B,2,Woods,2
+1,2009,Winter,Bristol,MA,B,3,Snow,1
+2,2009,Summer,Bristol,MA,A,2,Woods,3
+1,1978,Spring,Essex,MA,A,2,"Swamp, Woods",2
+2,1996,Summer,Essex,MA,B,2,Woods,3
+1,2006,Summer,Franklin,MA,B,2,Lake,3
+1,2000,Fall,Hampden,MA,B,1,"Mountains, Woods",4
+2,2010,Winter,Hampden,MA,B,2,Woods,1
+1,1998,Spring,Hampshire,MA,B,5,Woods,2
+2,2020,Summer,Hampshire,MA,B,2,"Mountains, Woods",3
+1,1977,Winter,Plymouth,MA,A,2,"Swamp, Woods",1
+2,1979,Summer,Plymouth,MA,B,2,Woods,3
+3,2000,Fall,Plymouth,MA,B,1,"Woods, Lake",4
+4,2009,Spring,Plymouth,MA,B,1,Woods,2
+5,2013,Summer,Plymouth,MA,A,1,Woods,3
+6,2015,Spring,Plymouth,MA,B,3,"Woods, Lake",2
+1,2008,Spring,Worcester,MA,A,1,Woods,2
+2,2010,Summer,Worcester,MA,B,2,Woods,3
+3,2016,Winter,Worcester,MA,A,2,Woods,1
+4,2016,Spring,Worcester,MA,B,2,Swamp,2

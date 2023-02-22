@@ -3,9 +3,49 @@
     <head>
         <meta charset=”utf-8” />
         <title>Take Home 1 Write-Up</title>
+        <style type="text/css">
+            #mydiv {
+                max-width: 600px;
+            }
+            </style>
     </head>
     <body>
-        <p><a href="Assmt1Script.html">Return To Visualization</a></p>
+        <div id="mydiv">
+            <p><a href="Assmt1Script.html">Return To Visualization</a></p>
+            <h3>1) What (3 or more) tasks a potential reader might use the visualization to do?</h3>
+            <p>1. Determine which county has had the most Bigfoot sightings.</p>
+            <p>2. Determine which class of sighting was the most and least common.</p>
+            <p>3. Determine which county or counties have had any winter Bigfoot sightings.</p>
+            <p>4. So Determine the years in which Bigfoot was sighted in the summertime.</p>
+            <p>5. Determine which counties have had any Class A sightings.</p>
+            <p>6. When was the most recent Bigfoot sighting in Plymouth County?</p>
+
+            <h3>2) Of the tasks you write in step 1, choose one and detail what smaller cognitive tasks and corresponding visual queries are required to complete the task.</h3>
+            <p>In order to complete Cognitive Task 1 (determine which county has had the most Bigfoot sightings), a user would have 
+                to first complete the visual task of identifying the longest column, since each column represents a county. This takes very little cognitive effort, as the "Berkshire"
+                column is clearly longer than all the others (I would argue that the difference in length of this column is so great that a reader can recognize the lognest column pre-attentively). 
+                After identifying which column is the longest, the reader needs to complete the smaller cognitive task of figuring out which county that column corresponds to.
+                To do this, they would have to visually scan up the column to the county label at the top, and identify the name "Berkshire." 
+            </p>
+            <h3>3) Write down the design decisions you made to make parts of the visualization tunable, and why they are effective. You should use visual cognition literature (e.g., the textbook, assigned readings, or other peer-reviewed articles).</h3>
+            <p> First, I focused on the three variables I wanted to make tunable. I settled on county, class, and season as my three main variables. </p>
+            <p>I chose to map the county to the x coordinate, because county would be important in many users' tasks, and it is very easy to tune by position. Furthermore, I ordered the counties roughly according to their geographic position: the westernmost counties are on the left, and the easternmost on the right. This is because there is a cultural, semantic expectation that west equals left and east equals right, as this is the most common orientation on maps. Encoding the county with x coordinates at consistent intervals makes for a good ordinal encoding of the county's rough geographic longitude. </p>
+            <p>I then decided to map the season to the color of each circle. Color is also relatively easy to tune by, so it made sense to encode the season variable with colors. Furthermore, colors carry some semantic meaning in relationship to the seasons as well: many people associate the color orange with the falltime, blue with the wintertime, etc. These associations are drawn from physical experience: orange leaves appear in the falltime, the blueish glow of snow in the winter, the green blooming plants of spring, and (to a lesser extent) the hot yellow sun of summer. </p>
+            <p>Finally, I encoded the Class of the sighting with size. The differences in the magnitudes of the sizes of the circles are great, and there are only three categories, so it's very easy to tell these groups apart and to tune for the different sizes. Furthermore, the size categories express an ordinal relationship between the classes of bigfoot sighting, and the larger circles express a more "serious" class of bigfoot sighting than the smaller circles (this was a deliberate choice to emphasize the more serious sightings). </p>
+            <p>Tuning is very effective here because the encodings I've chosen are very separable from one another. </p>
         
+            <h3>4) Detail all of the marks and channels used in your visualization, what they are visually encoding, and why you chose them. You should use visual cognition literature (e.g., the textbook, assigned readings, or other peer-reviewed articles).</h3>
+            <p>Marks: </p>
+            <p>Text labeling each County, Circles representing each Bigfoot Sighting, and text labeling the year of the sighting.</p>
+            <p>Channels: </p>
+            <p>For the county labels, the only channel that varies is the X position. This position corresponds roughly to the longitude of each county, making it easier for a user familiar with the geography to locate specific counties. </p>
+            <p>For the circles, there are several channels used to encode different information. </p>
+            <p>The X position represents the county in the same way as the column labels. </p>
+            <p>The Y position represents the chronological timing of each sighting (the year + the season), sorted ordinally within the county. I have sorted it this was to make it easier to compare ordinally-adjacent sightings within each county, as well as to find the earliest and latest sighting for each county. The ordinal nature of this encoding also causes the length of each column to correspond with the total number of Bigfoot sightings in that county, making certain user tasks easier, like the one described above.</p>
+            <p>The color of the circle represents season, which is technically an ordinal variable in isolation here, but I treat it as a categorial variable for the purpose of this encoding. I described in the section above why I chose the colors I did: semantically, people often have some association between these colors and the seasons. The use of the color channel also makes it easy for a user to tune by season.</p>
+            <p>The size of each circle represents the sighting's Class. I described above why I encoded it like this: with only three categories, it is very easy to distinguish between the different sizes. They are encoded ordinally, with the most significant sightings being represented by the biggest circles. </p>
+            <p>The text within each circle varies by X* and Y position in the same way as the circles themselves. The only other channel that varies is the color of the text: white text is used for the Winter and Spring circles, while black text is used on the Summer and Fall ones. This is purely an legibility consideration, because the dark text is hard to read on a not-very-contrasting dark color (perhaps in a future iteration I would make the brightness of each circle constant to fix this problem).</p>
+            <p>*The x position of the text on Class C circles is offset slightly for legibility reasons. Putting the text directly over the circle makes it hard to read the number due to poor contrast.</p>
+        </div>
     </body>
 </html>

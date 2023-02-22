@@ -3,7 +3,7 @@ d3.csv("Bigfoot Sightings in MA - Sheet1.csv").then(function(data) {
     const svg2 = d3.select("#plot2");
 
     const pad = 1.3;
-    const yPad = 20;
+    const yPad = 60;
     leftMarg = 40;
     bigR = 28;
     medR = 12;
@@ -39,17 +39,19 @@ d3.csv("Bigfoot Sightings in MA - Sheet1.csv").then(function(data) {
                 else if (d.Season == "Winter") {return "blue"}
             })
                 
+    //column labels        
     var txt = svg.selectAll("text")
         .data(data, function(d) {return d.County})
         .enter().append("text")
             .style("fill", "black")
             .attr("text-anchor", "middle")
             .attr("x",function(d) {return countyToXCoord(d["County"])})
-            .attr("y", yPad * .75)
+            .attr("y", yPad )
             .attr("font-size", "11px")
             .attr("font-weight", "bold")
             .text(function(d) {return d.County})
 
+    //circle labels        
     data.forEach(function(d) {
         svg.append("text")
             .attr("text-anchor", "middle")
@@ -66,6 +68,8 @@ d3.csv("Bigfoot Sightings in MA - Sheet1.csv").then(function(data) {
             .text(d.Year)
     })
 
+    
+
     legY1 = 70
     legY2 = legY1 + 50
     legY3 = legY2 + 40
@@ -73,6 +77,15 @@ d3.csv("Bigfoot Sightings in MA - Sheet1.csv").then(function(data) {
     legSpringX = leftMarg + pad * 250
     legSummerX = leftMarg + pad * 300
     legFallX = leftMarg + pad * 350
+
+    //title:
+    svg.append("text")
+        .attr("text-anchor", "middle")
+        .attr("font-weight", "bold")
+        .attr("font-size", "20px")
+        .attr("x", legWinterX)
+        .attr("y", 15)
+        .text("Bigfoot Sigtings By County")
 
     svg2.append("text")
         .attr("text-anchor", "left")
